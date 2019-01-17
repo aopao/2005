@@ -17,11 +17,10 @@ class CreateAdminsTable extends Migration
     {
         if (! Schema::hasTable('admins')) {
             Schema::create('admins', function (Blueprint $table) {
-                $table->uuid('id');
-                $table->primary('id');
+                $table->increments('id');
+                $table->uuid('guid');
                 $table->string('mobile', 11)->index('mobile')->unique();
                 $table->string('password');
-                $table->string('uuid', 11)->unique();
                 $table->string('nickname', 255)->nullable();
                 $table->string('email', 255)->nullable();
                 $table->integer('qq')->nullable();

@@ -12,8 +12,12 @@ $api = app('Dingo\Api\Routing\Router');
  */
 $api->version('v1', function ($api) {
     $api->group(["namespace" => "App\Api\Controllers\Admin"], function ($api) {
-        $api->get('/admin', ['as' => 'api.admin.index', 'uses' => 'AdminController@index']);
-        $api->post('auth/login', ['uses' => 'AuthController@login']);
-        $api->post('auth/logout', ['uses' => 'AuthController@logout']);
+        //$api->get('/admin', ['as' => 'api.admin.index', 'uses' => 'AdminController@index']);
+        //$api->post('auth/logout', ['uses' => 'AuthController@logout']);
+        $api->resource('admin', 'AdminController');
+        $api->post('role/permission', ['uses' => 'RoleController@givePermission']);
+        $api->post('role/user', ['uses' => 'RoleController@giveUser']);
+        $api->resource('role', 'RoleController');
+        $api->resource('permission', 'PermissionController');
     });
 });

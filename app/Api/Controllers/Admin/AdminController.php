@@ -6,8 +6,9 @@ use App\Validators\AdminValidator;
 use App\Repositories\AdminRepository;
 use App\Http\Requests\AdminCreateRequest;
 use App\Http\Requests\AdminUpdateRequest;
+use App\Transformers\AdminTransformers;
 use Prettus\Validator\Contracts\ValidatorInterface;
-use Prettus\Validator\Exceptions\ValidatorException;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 /**
  * Class AdminsController.
@@ -42,160 +43,80 @@ class AdminController extends BaseController
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Dingo\Api\Http\Response
      */
     public function index()
     {
-        $this->repository->pushCriteria(app('Prettus\Repository\Criteria\RequestCriteria'));
-        $admins = $this->repository->all();
+        $data = $this->repository->all();
 
-        if (request()->wantsJson()) {
-
-            return response()->json([
-                'data' => $admins,
-            ]);
-        }
-
-        return view('admins.index', compact('admins'));
+        return $this->response->collection($data, new AdminTransformers);
     }
 
     /**
-     * Store a newly created resource in storage.
+     *  Store a newly created resource in storage.
      *
-     * @param  AdminCreateRequest $request
-     *
-     * @return \Illuminate\Http\Response
-     *
+     * @param \App\Http\Requests\AdminCreateRequest $request
+     * @return array
      * @throws \Prettus\Validator\Exceptions\ValidatorException
      */
     public function store(AdminCreateRequest $request)
     {
         try {
-
             $this->validator->with($request->all())->passesOrFail(ValidatorInterface::RULE_CREATE);
-
             $admin = $this->repository->create($request->all());
 
-            $response = [
-                'message' => 'Admin created.',
-                'data' => $admin->toArray(),
-            ];
+            return $this->responseFormat->success($admin);
+        } catch (ModelNotFoundException $e) {
 
-            if ($request->wantsJson()) {
-
-                return response()->json($response);
-            }
-
-            return redirect()->back()->with('message', $response['message']);
-        } catch (ValidatorException $e) {
-            if ($request->wantsJson()) {
-                return response()->json([
-                    'error' => true,
-                    'message' => $e->getMessageBag(),
-                ]);
-            }
-
-            return redirect()->back()->withErrors($e->getMessageBag())->withInput();
+            return $this->responseFormat->error();
         }
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int $id
-     *
-     * @return \Illuminate\Http\Response
+     * @param $guid
+     * @return array|\Dingo\Api\Http\Response
      */
-    public function show($id)
+    public function show($guid)
     {
-        $admin = $this->repository->find($id);
+        $admin = $this->repository->findByField('guid', $guid)->first();
 
-        if (request()->wantsJson()) {
-
-            return response()->json([
-                'data' => $admin,
-            ]);
-        }
-
-        return view('admins.show', compact('admin'));
+        return isset($admin) ? $this->response->item($admin, new AdminTransformers) : $this->responseFormat->error();
     }
 
     /**
-     * Show the form for editing the specified resource.
+     *  Update the specified resource in storage.
      *
-     * @param  int $id
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        $admin = $this->repository->find($id);
-
-        return view('admins.edit', compact('admin'));
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  AdminUpdateRequest $request
-     * @param  string             $id
-     *
-     * @return Response
-     *
+     * @param \App\Http\Requests\AdminUpdateRequest $request
+     * @param                                       $guid
+     * @return array
      * @throws \Prettus\Validator\Exceptions\ValidatorException
      */
-    public function update(AdminUpdateRequest $request, $id)
+    public function update(AdminUpdateRequest $request, $guid)
     {
-        try {
+        $this->validator->with($request->all())->passesOrFail(ValidatorInterface::RULE_UPDATE);
+        $info = $this->repository->getIdByGuid($guid);
+        if (isset($info)) {
+            $this->repository->update($request->all(), $info['id']);
 
-            $this->validator->with($request->all())->passesOrFail(ValidatorInterface::RULE_UPDATE);
-
-            $admin = $this->repository->update($request->all(), $id);
-
-            $response = [
-                'message' => 'Admin updated.',
-                'data' => $admin->toArray(),
-            ];
-
-            if ($request->wantsJson()) {
-
-                return response()->json($response);
-            }
-
-            return redirect()->back()->with('message', $response['message']);
-        } catch (ValidatorException $e) {
-
-            if ($request->wantsJson()) {
-
-                return response()->json([
-                    'error' => true,
-                    'message' => $e->getMessageBag(),
-                ]);
-            }
-
-            return redirect()->back()->withErrors($e->getMessageBag())->withInput();
+            return $this->responseFormat->success([]);
+        } else {
+            return $this->responseFormat->error();
         }
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $id
-     *
-     * @return \Illuminate\Http\Response
+     * @param $guid
+     * @return array
      */
-    public function destroy($id)
+    public function destroy($guid)
     {
-        $deleted = $this->repository->delete($id);
 
-        if (request()->wantsJson()) {
+        $response = $this->repository->deleteWhere(['guid' => $guid]);
 
-            return response()->json([
-                'message' => 'Admin deleted.',
-                'deleted' => $deleted,
-            ]);
-        }
-
-        return redirect()->back()->with('message', 'Admin deleted.');
+        return $response ? $this->responseFormat->success([]) : $this->responseFormat->error();
     }
 }

@@ -2,9 +2,9 @@
 
 namespace App\Http\Requests;
 
-use Dingo\Api\Http\FormRequest;
+use Illuminate\Foundation\Http\FormRequest;
 
-class AdminUpdateRequest extends FormRequest
+class PermissionUpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,9 @@ class AdminUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'nickname' => 'between:0,18',//验证昵称
+            'name' => 'required',
+            'display_name' => 'required',
+            'guard_name' => 'required',
         ];
     }
 
@@ -36,9 +38,8 @@ class AdminUpdateRequest extends FormRequest
     public function messages()
     {
         return [
-            'mobile.required' => '手机号码不能为空',
-            'mobile.regex' => '手机号码不合法',
-            'password.required' => '密码不能为空',
+            'name.required' => '唯一标识符不能为空',
+            'display_name.required' => '名称不能为空',
         ];
     }
 }

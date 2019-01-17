@@ -6,8 +6,9 @@ use Illuminate\Http\Request;
 use Dingo\Api\Routing\Helpers;
 use Tymon\JWTAuth\Facades\JWTAuth;
 use App\Http\Controllers\Controller;
-use App\Api\Serializers\DataSerializer;
 use App\Api\Serializers\PageSerializer;
+use App\Api\Serializers\ResponseFormat;
+use App\Api\Serializers\DataArraySerializer;
 
 class BaseController extends Controller
 {
@@ -19,14 +20,9 @@ class BaseController extends Controller
     public $jwt;
 
     /**
-     * @var \Illuminate\Http\Request
+     * @var \App\Api\Serializers\ResponseFormat
      */
-    public $request;
-
-    /**
-     * @var \App\Api\Serializers\DataSerializer
-     */
-    public $dataSerializer;
+    public $responseFormat;
 
     /**
      * @var PageSerializer
@@ -34,12 +30,17 @@ class BaseController extends Controller
     public $pageSerializer;
 
     /**
+     * @var \App\Api\Serializers\DataArraySerializer
+     */
+    public $dataArraySerializer;
+
+    /**
      * BaseController constructor.
      */
     public function __construct()
     {
         $this->middleware(function ($request, $next) {
-            $this->init(new JWTAuth(), new Request(), new DataSerializer(), new PageSerializer());
+            $this->init(new JWTAuth(), new ResponseFormat(), new PageSerializer(), new DataArraySerializer());
 
             return $next($request);
         });
@@ -50,15 +51,15 @@ class BaseController extends Controller
      * 初始化后台所需的各种类库
      *
      * @param $jwt
-     * @param $request
-     * @param $dataSerializer
+     * @param $responseFormat
      * @param $pageSerializer
+     * @param $dataArraySerializer
      */
-    public function init($jwt, $request, $dataSerializer, $pageSerializer)
+    public function init($jwt, $responseFormat, $pageSerializer, $dataArraySerializer)
     {
         $this->jwt = $jwt;
-        $this->request = $request;
-        $this->dataSerializer = $dataSerializer;
+        $this->responseFormat = $responseFormat;
         $this->pageSerializer = $pageSerializer;
+        $this->dataArraySerializer = $dataArraySerializer;
     }
 }
