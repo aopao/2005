@@ -44,7 +44,8 @@ class BaseController extends Controller
 
             return $next($request);
         });
-        //$this->middleware('auth:admin_api', ['except' => ['login']]);
+        $this->middleware('auth:admin', ['except' => ['login']]);
+        $this->middleware('admin', ['except' => ['login']]);
     }
 
     /**

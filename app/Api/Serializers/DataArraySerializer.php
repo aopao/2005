@@ -16,9 +16,6 @@ class DataArraySerializer extends ArraySerializer
     public function collection($resourceKey, array $data)
     {
         $resultData = ['data' => $data, 'status_code' => 200, 'message' => 'success'];
-        if (! empty($resourceKey)) {
-            $resultData['total'] = $resourceKey;
-        }
 
         return $resultData;
     }

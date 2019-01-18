@@ -41,7 +41,7 @@ return [
             'provider' => 'users',
         ],
         'admin' => [
-            'driver' => 'session',
+            'driver' => 'jwt',
             'provider' => 'admins',
         ],
         'api' => [
@@ -75,7 +75,6 @@ return [
         'admins' => [
             'driver' => 'eloquent',
             'model' => App\Entities\Admin::class,
-            //'model' => App\User::class,
         ],
     ],
 

@@ -4,6 +4,7 @@ namespace App\Entities;
 
 use App\Traits\UuidPrimaryKey;
 use Spatie\Permission\Traits\HasRoles;
+use Tymon\JWTAuth\Contracts\JWTSubject;
 use Illuminate\Notifications\Notifiable;
 use Prettus\Repository\Contracts\Transformable;
 use Prettus\Repository\Traits\TransformableTrait;
@@ -14,7 +15,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  *
  * @package namespace App\Entities;
  */
-class Admin extends Authenticatable implements Transformable
+class Admin extends Authenticatable implements JWTSubject, Transformable
 {
     use HasRoles;
     use Notifiable;
@@ -22,7 +23,7 @@ class Admin extends Authenticatable implements Transformable
     use TransformableTrait;
 
     protected $guard_name = 'admin';
-    
+
     protected $table = "admins";
 
     /**
@@ -42,5 +43,25 @@ class Admin extends Authenticatable implements Transformable
     public function setPasswordAttribute($password)
     {
         $this->attributes['password'] = bcrypt($password);
+    }
+
+    /**
+     * Get the identifier that will be stored in the subject claim of the JWT.
+     *
+     * @return mixed
+     */
+    public function getJWTIdentifier()
+    {
+        return $this->getKey();
+    }
+
+    /**
+     * Return a key value array, containing any custom claims to be added to the JWT.
+     *
+     * @return array
+     */
+    public function getJWTCustomClaims()
+    {
+        return [];
     }
 }
