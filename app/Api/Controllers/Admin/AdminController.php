@@ -2,12 +2,13 @@
 
 namespace App\Api\Controllers\Admin;
 
+use Auth;
+use Illuminate\Http\Request;
 use App\Validators\AdminValidator;
 use App\Repositories\AdminRepository;
+use App\Transformers\AdminTransformers;
 use App\Http\Requests\AdminCreateRequest;
 use App\Http\Requests\AdminUpdateRequest;
-use App\Transformers\AdminTransformers;
-use Prettus\Validator\Contracts\ValidatorInterface;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 /**
@@ -28,28 +29,35 @@ class AdminController extends BaseController
     protected $validator;
 
     /**
+     * @var \Illuminate\Http\Request
+     */
+    private $request;
+
+    /**
      * AdminsController constructor.
      *
-     * @param AdminRepository $repository
-     * @param AdminValidator  $validator
+     * @param AdminRepository          $repository
+     * @param AdminValidator           $validator
+     * @param \Illuminate\Http\Request $request
      */
-    public function __construct(AdminRepository $repository, AdminValidator $validator)
+    public function __construct(AdminRepository $repository, AdminValidator $validator, Request $request)
     {
         parent::__construct();
         $this->repository = $repository;
         $this->validator = $validator;
+        $this->request = $request;
     }
 
     /**
      * Display a listing of the resource.
      *
-     * @return \Dingo\Api\Http\Response
+     * @return array
      */
     public function index()
     {
-        $data = $this->repository->all();
+        $data = $this->repository->getAllByPage($this->request);
 
-        return $this->response->collection($data, new AdminTransformers);
+        return $this->pageSerializer->collection($data['data'], $data['pageSize'], $pageNo = $data['pageNo'], $totalPage = $data['totalPage'], $totalCount = $data['totalCount']);
     }
 
     /**
@@ -57,12 +65,15 @@ class AdminController extends BaseController
      *
      * @param \App\Http\Requests\AdminCreateRequest $request
      * @return array
-     * @throws \Prettus\Validator\Exceptions\ValidatorException
      */
     public function store(AdminCreateRequest $request)
     {
         try {
-            $this->validator->with($request->all())->passesOrFail(ValidatorInterface::RULE_CREATE);
+
+            if ($a = $this->repository->findByField('mobile', $request->get('mobile', null))->first()) {
+                return $this->responseFormat->error(201, '手机号已经注册!');
+            }
+
             $admin = $this->repository->create($request->all());
 
             return $this->responseFormat->success($admin);
@@ -89,34 +100,61 @@ class AdminController extends BaseController
      *  Update the specified resource in storage.
      *
      * @param \App\Http\Requests\AdminUpdateRequest $request
-     * @param                                       $guid
+     * @param                                       $mobile
      * @return array
-     * @throws \Prettus\Validator\Exceptions\ValidatorException
      */
-    public function update(AdminUpdateRequest $request, $guid)
+    public function update(AdminUpdateRequest $request, $mobile)
     {
-        $this->validator->with($request->all())->passesOrFail(ValidatorInterface::RULE_UPDATE);
-        $info = $this->repository->getIdByGuid($guid);
+        $info = $this->repository->getIdByMobile($mobile);
         if (isset($info)) {
-            $this->repository->update($request->all(), $info['id']);
+            $data = $request->all();
+            //dd($data);
+            $this->repository->update($data, $info['id']);
 
-            return $this->responseFormat->success([]);
+            return $this->responseFormat->success($message = '修改成功!');
         } else {
-            return $this->responseFormat->error();
+            return $this->responseFormat->error($message = "修改失败!");
         }
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param $guid
+     * @param $mobile
      * @return array
      */
-    public function destroy($guid)
+    public function destroy($mobile)
     {
 
-        $response = $this->repository->deleteWhere(['guid' => $guid]);
+        $response = $this->repository->deleteWhere(['mobile' => $mobile]);
 
         return $response ? $this->responseFormat->success([]) : $this->responseFormat->error();
+    }
+
+    public function profile()
+    {
+        if (Auth::guard('admin')->check()) {
+            $admin = Auth::guard('admin')->user();
+            $admin->getRoleNames();
+            $admin->getAllPermissions();
+            $data = $admin->toArray();
+            if (isset($data['roles']) && isset($data['roles'][0])) {
+                $data['role']['name'] = $data['roles'][0]['display_name'];
+                $data['role']['describe'] = $data['roles'][0]['description'];
+                $permissions = $data['roles'][0]['permissions'];
+                foreach ($permissions as $key => $value) {
+                    $item = [];
+                    $item['name'] = $value['name'];
+                    $item['display_name'] = $value['display_name'];
+                    $data['role']['permissions'][] = $item;
+                }
+            }
+            unset($data['roles']);
+            $data['avatar'] = './avatar.jpeg';
+
+            return $this->responseFormat->success($data);
+        } else {
+            $this->responseFormat->error(201, '您还未登录!');
+        }
     }
 }

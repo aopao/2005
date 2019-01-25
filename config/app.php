@@ -174,7 +174,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        App\Providers\DingoServiceProvider::class
+        App\Providers\DingoServiceProvider::class,
+        Aopao\Region\RegionServiceProvider::class
     ],
 
     /*

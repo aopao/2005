@@ -12,15 +12,29 @@ $api = app('Dingo\Api\Routing\Router');
  */
 $api->version('v1', function ($api) {
     $api->group(["namespace" => "App\Api\Controllers\Admin"], function ($api) {
-        /**
-         * 登录注册部分
-         */
+
+        /*获取管理员个人信息*/
+        $api->get('admin/profile', ['as' => 'api.admin.profile', 'uses' => 'AdminController@profile']);
+
+        /*登录注册退出路由*/
         $api->get('auth/login', ['as' => 'api.admin.auth.login', 'uses' => 'AuthController@login']);
         $api->post('auth/login', ['uses' => 'AuthController@login']);
         $api->post('auth/logout', ['uses' => 'AuthController@logout']);
 
-        $api->get('admin/show/{id}', 'AdminController@index');
+        /*管理员管理管理路由*/
         $api->resource('admin', 'AdminController');
+
+        /*大学类型管理管理路由*/
+        $api->resource('college/category', 'CollegeCategoryController');
+
+        /*大学信息管理管理路由*/
+        $api->resource('college', 'CollegeController');
+
+        /*省份管理管理路由*/
+        $api->get('province/option_list', 'ProvinceController@option_list');
+        $api->resource('province', 'ProvinceController');
+
+        /*管理管理路由*/
         $api->post('role/permission', ['uses' => 'RoleController@givePermission']);
         $api->post('role/user', ['uses' => 'RoleController@giveUser']);
         $api->resource('role', 'RoleController');

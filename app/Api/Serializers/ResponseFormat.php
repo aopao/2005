@@ -20,6 +20,7 @@ class ResponseFormat
             'data' => $data,
             'timestamp' => time(),
         ];
+
     }
 
     /**

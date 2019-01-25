@@ -22,8 +22,18 @@ class Admin extends Authenticatable implements JWTSubject, Transformable
     use UuidPrimaryKey;
     use TransformableTrait;
 
+    /**
+     * 设置 JWt guard
+     *
+     * @var string
+     */
     protected $guard_name = 'admin';
 
+    /**
+     * 设置数据库表
+     *
+     * @var string
+     */
     protected $table = "admins";
 
     /**
@@ -33,7 +43,12 @@ class Admin extends Authenticatable implements JWTSubject, Transformable
      */
     protected $fillable = ['mobile', 'password', 'nickname', 'email', 'qq', 'status', 'verify_token', 'email_is_active'];
 
-    protected $hidden = ['password', 'verify_token', 'email_is_active', 'remember_token'];
+    /**
+     * 隐藏的字段
+     *
+     * @var array
+     */
+    protected $hidden = ['id', 'password', 'verify_token', 'email_is_active', 'remember_token'];
 
     /**
      * 密码加密
