@@ -2,7 +2,6 @@
 
 namespace App\Api\Controllers\Admin;
 
-use Illuminate\Http\Request;
 use Dingo\Api\Routing\Helpers;
 use Tymon\JWTAuth\Facades\JWTAuth;
 use App\Http\Controllers\Controller;
@@ -45,7 +44,7 @@ class BaseController extends Controller
             return $next($request);
         });
         //$this->middleware('auth:admin', ['except' => ['login']]);
-        //$this->middleware('admin', ['except' => ['login']]);
+        //$this->middleware('admin', ['except' => ['login','respondWithToken']]);
     }
 
     /**

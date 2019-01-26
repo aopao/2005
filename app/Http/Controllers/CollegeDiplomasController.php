@@ -7,35 +7,35 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use Prettus\Validator\Contracts\ValidatorInterface;
 use Prettus\Validator\Exceptions\ValidatorException;
-use App\Http\Requests\ProvinceCreateRequest;
-use App\Http\Requests\ProvinceUpdateRequest;
-use App\Repositories\ProvinceRepository;
-use App\Validators\ProvinceValidator;
+use App\Http\Requests\CollegeDiplomasCreateRequest;
+use App\Http\Requests\CollegeDiplomasUpdateRequest;
+use App\Repositories\CollegeDiplomasRepository;
+use App\Validators\CollegeDiplomasValidator;
 
 /**
- * Class ProvincesController.
+ * Class CollegeDiplomasController.
  *
  * @package namespace App\Http\Controllers;
  */
-class ProvincesController extends Controller
+class CollegeDiplomasController extends Controller
 {
     /**
-     * @var ProvinceRepository
+     * @var CollegeDiplomasRepository
      */
     protected $repository;
 
     /**
-     * @var ProvinceValidator
+     * @var CollegeDiplomasValidator
      */
     protected $validator;
 
     /**
-     * ProvincesController constructor.
+     * CollegeDiplomasController constructor.
      *
-     * @param ProvinceRepository $repository
-     * @param ProvinceValidator $validator
+     * @param CollegeDiplomasRepository $repository
+     * @param CollegeDiplomasValidator $validator
      */
-    public function __construct(ProvinceRepository $repository, ProvinceValidator $validator)
+    public function __construct(CollegeDiplomasRepository $repository, CollegeDiplomasValidator $validator)
     {
         $this->repository = $repository;
         $this->validator  = $validator;
@@ -49,38 +49,38 @@ class ProvincesController extends Controller
     public function index()
     {
         $this->repository->pushCriteria(app('Prettus\Repository\Criteria\RequestCriteria'));
-        $provinces = $this->repository->all();
+        $collegeDiplomas = $this->repository->all();
 
         if (request()->wantsJson()) {
 
             return response()->json([
-                'data' => $provinces,
+                'data' => $collegeDiplomas,
             ]);
         }
 
-        return view('provinces.index', compact('provinces'));
+        return view('collegeDiplomas.index', compact('collegeDiplomas'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  ProvinceCreateRequest $request
+     * @param  CollegeDiplomasCreateRequest $request
      *
      * @return \Illuminate\Http\Response
      *
      * @throws \Prettus\Validator\Exceptions\ValidatorException
      */
-    public function store(ProvinceCreateRequest $request)
+    public function store(CollegeDiplomasCreateRequest $request)
     {
         try {
 
             $this->validator->with($request->all())->passesOrFail(ValidatorInterface::RULE_CREATE);
 
-            $province = $this->repository->create($request->all());
+            $collegeDiploma = $this->repository->create($request->all());
 
             $response = [
-                'message' => 'Province created.',
-                'data'    => $province->toArray(),
+                'message' => 'CollegeDiplomas created.',
+                'data'    => $collegeDiploma->toArray(),
             ];
 
             if ($request->wantsJson()) {
@@ -110,16 +110,16 @@ class ProvincesController extends Controller
      */
     public function show($id)
     {
-        $province = $this->repository->find($id);
+        $collegeDiploma = $this->repository->find($id);
 
         if (request()->wantsJson()) {
 
             return response()->json([
-                'data' => $province,
+                'data' => $collegeDiploma,
             ]);
         }
 
-        return view('provinces.show', compact('province'));
+        return view('collegeDiplomas.show', compact('collegeDiploma'));
     }
 
     /**
@@ -131,32 +131,32 @@ class ProvincesController extends Controller
      */
     public function edit($id)
     {
-        $province = $this->repository->find($id);
+        $collegeDiploma = $this->repository->find($id);
 
-        return view('provinces.edit', compact('province'));
+        return view('collegeDiplomas.edit', compact('collegeDiploma'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  ProvinceUpdateRequest $request
+     * @param  CollegeDiplomasUpdateRequest $request
      * @param  string            $id
      *
      * @return Response
      *
      * @throws \Prettus\Validator\Exceptions\ValidatorException
      */
-    public function update(ProvinceUpdateRequest $request, $id)
+    public function update(CollegeDiplomasUpdateRequest $request, $id)
     {
         try {
 
             $this->validator->with($request->all())->passesOrFail(ValidatorInterface::RULE_UPDATE);
 
-            $province = $this->repository->update($request->all(), $id);
+            $collegeDiploma = $this->repository->update($request->all(), $id);
 
             $response = [
-                'message' => 'Province updated.',
-                'data'    => $province->toArray(),
+                'message' => 'CollegeDiplomas updated.',
+                'data'    => $collegeDiploma->toArray(),
             ];
 
             if ($request->wantsJson()) {
@@ -194,11 +194,11 @@ class ProvincesController extends Controller
         if (request()->wantsJson()) {
 
             return response()->json([
-                'message' => 'Province deleted.',
+                'message' => 'CollegeDiplomas deleted.',
                 'deleted' => $deleted,
             ]);
         }
 
-        return redirect()->back()->with('message', 'Province deleted.');
+        return redirect()->back()->with('message', 'CollegeDiplomas deleted.');
     }
 }

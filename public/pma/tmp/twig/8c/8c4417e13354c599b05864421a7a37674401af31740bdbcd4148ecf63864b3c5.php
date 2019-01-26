@@ -62,6 +62,6 @@ class __TwigTemplate_7310538d46039f26a04e31593887eec0ae04e22e95e326af7f8cde4361c
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "secondary_tabs.twig", "/Users/jason/www/admit/public/pma/templates/secondary_tabs.twig");
+        return new Twig_Source("", "secondary_tabs.twig", "/Users/jason/www/2019/public/pma/templates/secondary_tabs.twig");
     }
 }

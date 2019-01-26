@@ -19,7 +19,7 @@ class AdminMiddleWare
     public function handle($request, Closure $next)
     {
         try {
-            if (Auth::check()) {
+            if (Auth::guard('admin')->check()) {
                 //获取用户模型
                 $user = Auth::guard('admin')->user();
                 //获取当前地址路由
@@ -32,9 +32,11 @@ class AdminMiddleWare
                 } else {
                     abort(404);
                 }
+            } else {
+                return response()->json(['status_code' => '未登录']);
             }
         } catch (PermissionDoesNotExist $exception) {
-            return response()->json(['status_code' => '403']);
+            return response()->json(['message' => '您的权限不足,无法进行操作,请联系管理员!', 'status_code' => 403]);
         }
     }
 }

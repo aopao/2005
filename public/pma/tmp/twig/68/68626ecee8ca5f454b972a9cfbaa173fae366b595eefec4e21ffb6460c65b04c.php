@@ -143,6 +143,6 @@ class __TwigTemplate_d43002ae572f33658bbad46c52cc482db1e91282a9c27a575f5773b88d6
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "columns_definitions/column_name.twig", "/Users/jason/www/admit/public/pma/templates/columns_definitions/column_name.twig");
+        return new Twig_Source("", "columns_definitions/column_name.twig", "/Users/jason/www/2019/public/pma/templates/columns_definitions/column_name.twig");
     }
 }

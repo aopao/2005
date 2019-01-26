@@ -108,7 +108,6 @@ class CollegeController extends BaseController
         $info = $this->repository->getIdByMobile($mobile);
         if (isset($info)) {
             $data = $request->all();
-            //dd($data);
             $this->repository->update($data, $info['id']);
 
             return $this->responseFormat->success($message = '修改成功!');

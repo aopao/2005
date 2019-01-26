@@ -64,6 +64,6 @@ class __TwigTemplate_9a2b53ad20baf182b143d4363f5761b4820616ffc42b20177b6a6b38b7d
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "columns_definitions/column_comment.twig", "/Users/jason/www/admit/public/pma/templates/columns_definitions/column_comment.twig");
+        return new Twig_Source("", "columns_definitions/column_comment.twig", "/Users/jason/www/2019/public/pma/templates/columns_definitions/column_comment.twig");
     }
 }

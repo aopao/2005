@@ -2,26 +2,56 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f48bc14c-913b-43a8-b379-855283904b3d" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Api/Controllers/Admin/CollegeCategoryController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Api/Controllers/Admin/CollegeController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Api/Controllers/Admin/ProvinceController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Entities/CollegeDetail.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Api/Controllers/Admin/CollegeDiplomasController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Api/Controllers/Admin/MajorController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Api/Controllers/Admin/ProvinceControlScoreController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/2019.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/2019.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Api/Controllers/Admin/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Api/Controllers/Admin/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Api/Controllers/Admin/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Api/Controllers/Admin/AuthController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Api/Controllers/Admin/BaseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Api/Controllers/Admin/BaseController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Api/Serializers/PageSerializer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Api/Serializers/PageSerializer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Api/Serializers/ResponseFormat.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Api/Serializers/ResponseFormat.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Entities/Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Entities/Admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Api/Controllers/Admin/CollegeCategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Api/Controllers/Admin/CollegeCategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Api/Controllers/Admin/CollegeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Api/Controllers/Admin/CollegeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Entities/CollegeCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Entities/CollegeCategory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Entities/CollegeDiplomas.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Entities/CollegeDiplomas.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProvincesController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/AdminMiddleWare.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/AdminMiddleWare.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/CollegeCategoryCreateRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/CollegeCategoryCreateRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/CollegeCategoryUpdateRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/CollegeCategoryUpdateRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/CollegeDiplomasCreateRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/CollegeDiplomasCreateRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/CollegeDiplomasUpdateRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/CollegeDiplomasUpdateRequest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Providers/RepositoryServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RepositoryServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/AdminRepositoryEloquent.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/AdminRepositoryEloquent.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/CollegeDiplomasRepositoryEloquent.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/CollegeDiplomasRepositoryEloquent.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/laravel_access.log" beforeDir="false" afterPath="$PROJECT_DIR$/laravel_access.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/a.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/pma/tmp/twig/04/04bc4a4a01bc947a4f0d25592b8ee5037e9fb0bc7efc5d957599066e37b6055b.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/pma/tmp/twig/04/04bc4a4a01bc947a4f0d25592b8ee5037e9fb0bc7efc5d957599066e37b6055b.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/pma/tmp/twig/04/04f617c84de56ef48df693c57ec993a7c1a630be263e93859f1fe622faaa55c0.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/pma/tmp/twig/04/04f617c84de56ef48df693c57ec993a7c1a630be263e93859f1fe622faaa55c0.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/pma/tmp/twig/08/087d810ac45bf13e016a801fdbb16519ae135ae8200564fae32bfd45a73ba969.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/pma/tmp/twig/08/087d810ac45bf13e016a801fdbb16519ae135ae8200564fae32bfd45a73ba969.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/pma/tmp/twig/09/0947218dfd8cb77681aefde28aabf3b95d7f45f68610e880d34e7bbf37b21708.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/pma/tmp/twig/09/0947218dfd8cb77681aefde28aabf3b95d7f45f68610e880d34e7bbf37b21708.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/pma/tmp/twig/10/108acbd63842d740fe6e9524d4226a4bad8fc33779c7abe5ef352540dd2a62f0.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/pma/tmp/twig/10/108acbd63842d740fe6e9524d4226a4bad8fc33779c7abe5ef352540dd2a62f0.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/pma/tmp/twig/15/1572ce9c1780fdf0af42ad99f193740260a118aa87c00ebb56642245d04c6240.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/pma/tmp/twig/15/1572ce9c1780fdf0af42ad99f193740260a118aa87c00ebb56642245d04c6240.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/pma/tmp/twig/1a/1a2ea155a30f8d4ca98a1daa61c18165100cd7608efe82a28c2d92a1e3d422e1.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/pma/tmp/twig/1a/1a2ea155a30f8d4ca98a1daa61c18165100cd7608efe82a28c2d92a1e3d422e1.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/pma/tmp/twig/1e/1e1b461f2494e5bf04a82af61b8ff9c3a2d67cd7d59cb34fc153e46bcc5e5a4c.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/pma/tmp/twig/1e/1e1b461f2494e5bf04a82af61b8ff9c3a2d67cd7d59cb34fc153e46bcc5e5a4c.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/pma/tmp/twig/2d/2d15d64d1da9d4ed88071fa20ebff837d91331e3785b87c948a697194a965435.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/pma/tmp/twig/2d/2d15d64d1da9d4ed88071fa20ebff837d91331e3785b87c948a697194a965435.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/pma/tmp/twig/38/38d3a362770e7b09cbcfa5672aa3c360f56e745562ee5424dd92fe613bad403e.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/pma/tmp/twig/38/38d3a362770e7b09cbcfa5672aa3c360f56e745562ee5424dd92fe613bad403e.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/pma/tmp/twig/4a/4a9802d50eadcb191c89d8cdff27de16da131c081e571adc9b7810ba82008bbb.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/pma/tmp/twig/4a/4a9802d50eadcb191c89d8cdff27de16da131c081e571adc9b7810ba82008bbb.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/pma/tmp/twig/54/54ac979914df0b2963f106c4796a40620dcacdb54a49d4c4a752f315e1dd1d44.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/pma/tmp/twig/54/54ac979914df0b2963f106c4796a40620dcacdb54a49d4c4a752f315e1dd1d44.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/pma/tmp/twig/59/59195ad8822c093d2c1cbc8411ab36e621499315a615c63b8ceca6a6e88b39e1.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/pma/tmp/twig/59/59195ad8822c093d2c1cbc8411ab36e621499315a615c63b8ceca6a6e88b39e1.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/pma/tmp/twig/68/68626ecee8ca5f454b972a9cfbaa173fae366b595eefec4e21ffb6460c65b04c.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/pma/tmp/twig/68/68626ecee8ca5f454b972a9cfbaa173fae366b595eefec4e21ffb6460c65b04c.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/pma/tmp/twig/70/709c0fcbf6a857e33478ec591fc3294cbaa2cd95042a2ec3b8e6784702a1c562.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/pma/tmp/twig/70/709c0fcbf6a857e33478ec591fc3294cbaa2cd95042a2ec3b8e6784702a1c562.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/pma/tmp/twig/73/731ce8dc5e63acb981a917e3e192b2df1109d6f1da7c68f2fed95a4d2411cdc3.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/pma/tmp/twig/73/731ce8dc5e63acb981a917e3e192b2df1109d6f1da7c68f2fed95a4d2411cdc3.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/pma/tmp/twig/80/80f558743462c58a0204ee7065280b36125954c87d4788197812803b389dc80b.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/pma/tmp/twig/80/80f558743462c58a0204ee7065280b36125954c87d4788197812803b389dc80b.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/pma/tmp/twig/86/86550fa3c18d5f22ccc3fa52ade0ab5ca96905c34302db25b05792c720deb5b6.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/pma/tmp/twig/86/86550fa3c18d5f22ccc3fa52ade0ab5ca96905c34302db25b05792c720deb5b6.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/pma/tmp/twig/8c/8c4417e13354c599b05864421a7a37674401af31740bdbcd4148ecf63864b3c5.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/pma/tmp/twig/8c/8c4417e13354c599b05864421a7a37674401af31740bdbcd4148ecf63864b3c5.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/pma/tmp/twig/98/989d5e944156e9acb1d2be0803a7139205bee97b6b2a434552fcd67198d1962d.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/pma/tmp/twig/98/989d5e944156e9acb1d2be0803a7139205bee97b6b2a434552fcd67198d1962d.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/pma/tmp/twig/a0/a01d74c446e0a034fc31ec09f87303bed2f5541e796387d4e8ec0281696684ef.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/pma/tmp/twig/a0/a01d74c446e0a034fc31ec09f87303bed2f5541e796387d4e8ec0281696684ef.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/pma/tmp/twig/af/af6af09245b6c0b2851cf91bd25af7cebfe9797d260fa7cc4335ab20f9b3aacb.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/pma/tmp/twig/af/af6af09245b6c0b2851cf91bd25af7cebfe9797d260fa7cc4335ab20f9b3aacb.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/pma/tmp/twig/bd/bd4f5b1a32b1e3b2fe92f3e7956b65edbe7bf6c3cfdc1b0eb959356ecd506a27.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/pma/tmp/twig/bd/bd4f5b1a32b1e3b2fe92f3e7956b65edbe7bf6c3cfdc1b0eb959356ecd506a27.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/pma/tmp/twig/db/db3851e295b134c4efe0221175b5b99e88aef8edfa85554e79cdf282db90a6eb.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/pma/tmp/twig/db/db3851e295b134c4efe0221175b5b99e88aef8edfa85554e79cdf282db90a6eb.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -39,11 +69,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="AppServiceProvider.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Providers/AppServiceProvider.php">
+      <file leaf-file-name="ProvinceControlScoreRepositoryEloquent.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Repositories/ProvinceControlScoreRepositoryEloquent.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="21" column="19" lean-forward="true" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
+            <state relative-caret-position="334">
+              <caret line="58" column="18" selection-start-line="58" selection-start-column="18" selection-end-line="58" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -62,6 +92,9 @@
       <find>AdminsController</find>
       <find>Admin</find>
       <find>College</find>
+      <find>CollegeCategory</find>
+      <find>CollegeDiplomas</find>
+      <find>ProvinceSc</find>
     </findStrings>
     <replaceStrings>
       <replace>$model</replace>
@@ -73,6 +106,10 @@
       <replace>College</replace>
       <replace>Province</replace>
       <replace>CollegeCategory</replace>
+      <replace>CollegeDiplomas</replace>
+      <replace>Major</replace>
+      <replace>ProvinceScontrolScore</replace>
+      <replace>Provincec</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -81,37 +118,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/config/secure.php" />
-        <option value="$PROJECT_DIR$/app/Utils/Encrypt.php" />
-        <option value="$PROJECT_DIR$/app/Api/Serializers/DataSerializer.php" />
-        <option value="$PROJECT_DIR$/app/Providers/DingoServiceProvider.php" />
-        <option value="$PROJECT_DIR$/app/Api/Transformers/AdminTransformers.php" />
-        <option value="$PROJECT_DIR$/app/Http/Requests/AdminCreateRequest.php" />
-        <option value="$PROJECT_DIR$/.env" />
-        <option value="$PROJECT_DIR$/vendor/prettus/l5-repository/src/Prettus/Repository/Eloquent/BaseRepository.php" />
-        <option value="$PROJECT_DIR$/app/Http/Requests/AdminUpdateRequest.php" />
-        <option value="$PROJECT_DIR$/app/Api/Controllers/Admin/RolesController.php" />
-        <option value="$PROJECT_DIR$/app/Repositories/RoleRepositoryEloquent.php" />
-        <option value="$PROJECT_DIR$/app/Http/Requests/RoleCreateRequest.php" />
-        <option value="$PROJECT_DIR$/app/Http/Requests/RoleUpdateRequest.php" />
-        <option value="$PROJECT_DIR$/app/Entities/Permission.php" />
-        <option value="$PROJECT_DIR$/app/Http/Requests/PermissionUpdateRequest.php" />
-        <option value="$PROJECT_DIR$/app/Http/Requests/PermissionCreateRequest.php" />
-        <option value="$PROJECT_DIR$/app/Api/Controllers/Admin/PermissionsController.php" />
-        <option value="$PROJECT_DIR$/app/Entities/RoleHasPermission.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_01_16_072410_create_admins_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_01_16_080843_create_permission_tables.php" />
-        <option value="$PROJECT_DIR$/app/Traits/UuidPrimaryKey.php" />
-        <option value="$PROJECT_DIR$/app/Transformers/AdminTransformers.php" />
-        <option value="$PROJECT_DIR$/app/Entities/Role.php" />
-        <option value="$PROJECT_DIR$/app/Api/Controllers/Admin/PermissionController.php" />
-        <option value="$PROJECT_DIR$/app/Api/Controllers/Admin/RoleController.php" />
-        <option value="$PROJECT_DIR$/config/auth.php" />
         <option value="$PROJECT_DIR$/app/Api/Serializers/DataArraySerializer.php" />
         <option value="$PROJECT_DIR$/app/Http/Kernel.php" />
-        <option value="$PROJECT_DIR$/app/Http/Middleware/AdminMiddleWare.php" />
         <option value="$PROJECT_DIR$/app/Api/Serializers/PageSerializer.php" />
-        <option value="$PROJECT_DIR$/app/Api/Controllers/Admin/BaseController.php" />
         <option value="$PROJECT_DIR$/app/Api/Serializers/ResponseFormat.php" />
         <option value="$PROJECT_DIR$/app/Repositories/AdminRepositoryEloquent.php" />
         <option value="$PROJECT_DIR$/app/Entities/Admin.php" />
@@ -120,18 +129,46 @@
         <option value="$PROJECT_DIR$/app/Api/Controllers/Admin/AdminController.php" />
         <option value="$PROJECT_DIR$/app/Api/Controllers/Admin/COllegeController.php" />
         <option value="$PROJECT_DIR$/app/Entities/CollegeDetail.php" />
-        <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/config/app.php" />
         <option value="$PROJECT_DIR$/app/Entities/College.php" />
         <option value="$PROJECT_DIR$/app/Entities/Province.php" />
         <option value="$PROJECT_DIR$/app/Repositories/CollegeRepositoryEloquent.php" />
         <option value="$PROJECT_DIR$/app/Repositories/ProvinceRepositoryEloquent.php" />
         <option value="$PROJECT_DIR$/app/Api/Controllers/Admin/ProvinceController.php" />
-        <option value="$PROJECT_DIR$/app/Providers/RepositoryServiceProvider.php" />
-        <option value="$PROJECT_DIR$/app/Api/Controllers/Admin/CollegeCategoryController.php" />
-        <option value="$PROJECT_DIR$/routes/api.php" />
         <option value="$PROJECT_DIR$/app/Repositories/CollegeCategoryRepositoryEloquent.php" />
         <option value="$PROJECT_DIR$/composer.lock" />
+        <option value="$PROJECT_DIR$/app/Api/Controllers/Admin/CollegeController.php" />
+        <option value="$PROJECT_DIR$/database/seeds/AdminTableSeeder.php" />
+        <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
+        <option value="$PROJECT_DIR$/app/Http/Requests/CollegeCategoryCreateRequest.php" />
+        <option value="$PROJECT_DIR$/app/Entities/CollegeCategory.php" />
+        <option value="$PROJECT_DIR$/app/Http/Requests/CollegeCategoryUpdateRequest.php" />
+        <option value="$PROJECT_DIR$/app/Api/Controllers/Admin/CollegeCategoryController.php" />
+        <option value="$PROJECT_DIR$/app/Entities/CollegeDiplomas.php" />
+        <option value="$PROJECT_DIR$/app/Api/Controllers/Admin/CollegeDiplomasController.php" />
+        <option value="$PROJECT_DIR$/app/Repositories/CollegeDiplomasRepositoryEloquent.php" />
+        <option value="$PROJECT_DIR$/app/Http/Requests/CollegeDiplomasUpdateRequest.php" />
+        <option value="$PROJECT_DIR$/app/Http/Requests/CollegeDiplomasCreateRequest.php" />
+        <option value="$PROJECT_DIR$/app/Http/Middleware/AdminMiddleWare.php" />
+        <option value="$PROJECT_DIR$/app/Api/Controllers/Admin/MajorController.php" />
+        <option value="$PROJECT_DIR$/app/Api/Controllers/Admin/BaseController.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_01_25_050842_create_college_diplomas_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_01_25_072426_create_majors_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_01_25_072650_create_major_details_table.php" />
+        <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/app/Entities/Major.php" />
+        <option value="$PROJECT_DIR$/app/Entities/MajorDetail.php" />
+        <option value="$PROJECT_DIR$/app/Imports/MajorImport.php" />
+        <option value="$PROJECT_DIR$/app/Repositories/MajorRepositoryEloquent.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_01_25_131015_create_province_control_scores_table.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/MajorsController.php" />
+        <option value="$PROJECT_DIR$/app/Providers/RepositoryServiceProvider.php" />
+        <option value="$PROJECT_DIR$/routes/api.php" />
+        <option value="$PROJECT_DIR$/app/Api/Controllers/Admin/ProvinceControlScoreController.php" />
+        <option value="$PROJECT_DIR$/database/seeds/RoleSeeder.php" />
+        <option value="$PROJECT_DIR$/app/Entities/ProvinceControlScore.php" />
+        <option value="$PROJECT_DIR$/app/Repositories/ProvinceControlScoreRepositoryEloquent.php" />
       </list>
     </option>
   </component>
@@ -259,6 +296,10 @@
       <path value="$PROJECT_DIR$/vendor/prettus/l5-repository" />
       <path value="$PROJECT_DIR$/vendor/spatie/laravel-permission" />
       <path value="$PROJECT_DIR$/vendor/aopao/region" />
+      <path value="$PROJECT_DIR$/vendor/markbaker/matrix" />
+      <path value="$PROJECT_DIR$/vendor/markbaker/complex" />
+      <path value="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet" />
+      <path value="$PROJECT_DIR$/vendor/maatwebsite/excel" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
@@ -291,7 +332,36 @@
               <item name="2019" type="b2602c69:ProjectViewProjectNode" />
               <item name="2019" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Providers" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Api" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="2019" type="b2602c69:ProjectViewProjectNode" />
+              <item name="2019" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Api" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="2019" type="b2602c69:ProjectViewProjectNode" />
+              <item name="2019" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Repositories" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="2019" type="b2602c69:ProjectViewProjectNode" />
+              <item name="2019" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="database" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="2019" type="b2602c69:ProjectViewProjectNode" />
+              <item name="2019" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="database" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="seeds" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="2019" type="b2602c69:ProjectViewProjectNode" />
+              <item name="2019" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="routes" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -347,18 +417,18 @@
       <updated>1547621777122</updated>
       <workItem from="1547621779473" duration="59669000" />
       <workItem from="1547797324505" duration="7755000" />
-      <workItem from="1548029856853" duration="10823000" />
+      <workItem from="1548029856853" duration="42827000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78247000" />
+    <option name="totallyTimeSpent" value="110251000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4990476" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4990476" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -367,7 +437,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.40952381" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.30857143" />
       <window_info anchor="bottom" id="RNConsole" order="7" />
       <window_info id="Favorites" order="2" sideWeight="0.50095236" side_tool="true" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -388,71 +458,39 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Api/Controllers/Admin/PermissionController.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/CheckForMaintenanceMode.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
+        <state relative-caret-position="-411" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/spatie/laravel-permission/src/Models/Role.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="94" column="27" selection-start-line="94" selection-start-column="27" selection-end-line="94" selection-end-column="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/jwt.php">
+    <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="193" column="12" selection-start-line="193" selection-start-column="12" selection-end-line="193" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/auth.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="619">
-          <caret line="76" column="39" selection-start-line="76" selection-start-column="39" selection-end-line="76" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/tymon/jwt-auth/src/Contracts/JWTSubject.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-84">
-          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/prettus/l5-repository/src/Prettus/Repository/Traits/TransformableTrait.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="569">
+        <state relative-caret-position="510">
           <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/prettus/l5-repository/src/Prettus/Repository/Contracts/Transformable.php">
+    <entry file="file://$PROJECT_DIR$/database/seeds/AdminTableSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="566">
-          <caret line="11" column="7" lean-forward="true" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+        <state relative-caret-position="528">
+          <caret line="13" column="56" selection-start-line="13" selection-start-column="56" selection-end-line="13" selection-end-column="56" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Api/Serializers/DataArraySerializer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="999">
-          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/app/Api/Controllers/Admin/PermissionController.php">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/Authenticate.php">
+    <entry file="file://$PROJECT_DIR$/app/Api/Serializers/PageSerializer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-85" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/TrimStrings.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="14" column="19" lean-forward="true" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Kernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="769">
-          <caret line="62" column="63" selection-start-line="62" selection-start-column="63" selection-end-line="62" selection-end-column="63" />
+        <state relative-caret-position="1600">
+          <caret line="29" column="44" lean-forward="true" selection-start-line="29" selection-start-column="44" selection-end-line="29" selection-end-column="44" />
         </state>
       </provider>
     </entry>
@@ -463,250 +501,315 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/SPL/SPL.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="39" column="6" selection-start-line="39" selection-start-column="6" selection-end-line="39" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/spatie/laravel-permission/src/Exceptions/PermissionDoesNotExist.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="2" column="10" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/prettus/laravel-validation/src/Prettus/Validator/Exceptions/ValidatorException.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="8" column="40" lean-forward="true" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Api/Serializers/PageSerializer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Api/Controllers/Admin/BaseController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="45" column="11" selection-start-line="45" selection-start-column="11" selection-end-line="45" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Api/Serializers/ResponseFormat.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="481">
-          <caret line="14" column="75" selection-start-line="14" selection-start-column="55" selection-end-line="14" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/prettus/l5-repository/src/Prettus/Repository/Contracts/RepositoryInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="150" column="20" selection-start-line="150" selection-start-column="20" selection-end-line="150" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Api/Controllers/Admin/AuthController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2085">
-          <caret line="36" column="38" lean-forward="true" selection-start-line="36" selection-start-column="38" selection-end-line="36" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Api/Controllers/Admin/CollegesController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="4" column="42" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/AdminUpdateRequest.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/EncryptCookies.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/CheckForMaintenanceMode.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/AdminMiddleWare.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/AdminCreateRequest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="934">
-          <caret line="28" column="28" lean-forward="true" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
+        <state relative-caret-position="803">
+          <caret line="47" column="5" lean-forward="true" selection-start-line="34" selection-start-column="3" selection-end-line="47" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/TrustProxies.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Entities/Admin.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/CollegeCategoryUpdateRequest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="32" column="13" lean-forward="true" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="181" column="27" lean-forward="true" selection-start-line="181" selection-start-column="27" selection-end-line="181" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2018_01_01_000000_create_regions_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="547">
-          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Entities/CollegeDetail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="934">
-          <caret line="27" column="17" lean-forward="true" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Entities/CollegeCategory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="77">
-          <caret line="11" column="35" lean-forward="true" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Entities/College.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="56" column="35" selection-start-line="56" selection-start-column="20" selection-end-line="56" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/CollegeRepositoryEloquent.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="79" column="9" lean-forward="true" selection-start-line="79" selection-start-column="9" selection-end-line="79" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Api/Controllers/Admin/AdminController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="5" column="28" lean-forward="true" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/CollegeCategoryRepository.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Entities/Province.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="549">
-          <caret line="15" column="27" lean-forward="true" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/ProvinceRepositoryEloquent.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="76" selection-start-line="76" selection-end-line="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Api/Controllers/Admin/ProvinceController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="66" column="7" lean-forward="true" selection-start-line="66" selection-start-column="7" selection-end-line="66" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Api/Controllers/Admin/CollegeCategoryController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="62" column="7" lean-forward="true" selection-start-line="62" selection-start-column="7" selection-end-line="62" selection-end-column="7" />
+        <state relative-caret-position="825">
+          <caret line="41" column="10" lean-forward="true" selection-start-line="41" selection-start-column="10" selection-end-line="41" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Api/Controllers/Admin/CollegeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
-          <caret line="26" column="20" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Providers/RepositoryServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="628">
-          <caret line="26" column="28" lean-forward="true" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/CollegeDiplomasRepository.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/AdminRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="479">
-          <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/AdminRepositoryEloquent.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="67" selection-start-line="67" selection-end-line="107" selection-end-column="5" />
-          <folding>
-            <element signature="e#1366#2470#0#PHP" />
-          </folding>
+        <state relative-caret-position="638">
+          <caret line="59" column="72" lean-forward="true" selection-start-line="59" selection-start-column="72" selection-end-line="59" selection-end-column="72" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Repositories/CollegeCategoryRepositoryEloquent.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="56" column="30" selection-start-line="56" selection-start-column="30" selection-end-line="56" selection-end-column="30" />
+        <state relative-caret-position="238">
+          <caret line="46" selection-start-line="46" selection-end-line="78" selection-end-column="5" />
+          <folding>
+            <element signature="e#1078#1988#0#PHP" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/api.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/CollegeCategoryCreateRequest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-458">
-          <caret line="23" column="21" lean-forward="true" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+        <state relative-caret-position="326">
+          <caret line="23" selection-start-line="23" selection-end-line="42" selection-end-column="5" />
+          <folding>
+            <element signature="e#420#550#0#PHP" />
+            <element signature="e#615#724#0#PHP" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/composer.lock">
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/CollegeDiplomasUpdateRequest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="638">
-          <caret line="11" column="7" lean-forward="true" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+        <state relative-caret-position="454">
+          <caret line="15" column="19" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/CollegeDiplomasCreateRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="811">
+          <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Api/Controllers/Admin/AdminController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="668">
+          <caret line="76" column="43" selection-start-line="76" selection-start-column="43" selection-end-line="76" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Api/Controllers/Admin/AuthController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="76" column="39" selection-start-line="76" selection-start-column="23" selection-end-line="76" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/AdminMiddleWare.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="38" column="23" lean-forward="true" selection-start-line="38" selection-start-column="23" selection-end-line="38" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Api/Controllers/Admin/MajorController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="711">
+          <caret line="64" column="6" lean-forward="true" selection-start-line="64" selection-start-column="6" selection-end-line="64" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Api/Controllers/Admin/BaseController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="43" column="35" lean-forward="true" selection-start-line="43" selection-start-column="35" selection-end-line="43" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="524">
+          <caret line="222" lean-forward="true" selection-start-line="222" selection-end-line="222" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="472">
+          <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+          <folding>
+            <element signature="e#7#389#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_25_050842_create_college_diplomas_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="383">
+          <caret line="19" column="54" lean-forward="true" selection-start-line="19" selection-start-column="54" selection-end-line="19" selection-end-column="54" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="870">
-          <caret line="15" column="29" lean-forward="true" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+        <state relative-caret-position="317">
+          <caret line="18" column="41" lean-forward="true" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CollegeCategoriesController.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Presenters/CollegeCategoryPresenter.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Providers/AppServiceProvider.php">
+    <entry file="file://$PROJECT_DIR$/config/filesystems.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="21" column="19" lean-forward="true" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
+        <state relative-caret-position="640">
+          <caret line="50" column="15" selection-start-line="50" selection-start-column="9" selection-end-line="50" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_25_072426_create_majors_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="725">
+          <caret line="24" column="49" lean-forward="true" selection-start-line="24" selection-start-column="49" selection-end-line="24" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_25_072650_create_major_details_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1856">
+          <caret line="32" column="31" lean-forward="true" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="470">
+          <caret line="9" column="20" lean-forward="true" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Imports/MajorImport.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="928">
+          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/MajorRepositoryEloquent.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3006">
+          <caret line="66" column="9" lean-forward="true" selection-start-line="66" selection-start-column="9" selection-end-line="66" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/MajorRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="9" column="18" lean-forward="true" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Api/Controllers/Admin/CollegeCategoryController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="610">
+          <caret line="128" selection-start-line="128" selection-end-line="128" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_25_131040_create_province_control_scores_table.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_25_131015_create_province_control_scores_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+          <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MajorsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="56" column="43" lean-forward="true" selection-start-line="56" selection-start-column="43" selection-end-line="56" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Api/Controllers/Admin/ProvinceController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="622">
+          <caret line="56" column="5" lean-forward="true" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Api/Controllers/Admin/CollegeDiplomasController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="76" column="38" selection-start-line="76" selection-start-column="38" selection-end-line="76" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Providers/RepositoryServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="557">
+          <caret line="29" column="32" lean-forward="true" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/MajorDetailRepositoryEloquent.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1154">
+          <caret line="6" column="43" lean-forward="true" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/CollegeRepositoryEloquent.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="586">
+          <caret line="52" column="42" selection-start-line="52" selection-start-column="42" selection-end-line="52" selection-end-column="42" />
+          <folding>
+            <element signature="e#1014#2637#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/CollegeDiplomasRepositoryEloquent.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="46" selection-start-line="46" selection-end-line="78" selection-end-column="5" />
+          <folding>
+            <element signature="e#1078#1988#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="481">
+          <caret line="40" column="23" lean-forward="true" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Api/Controllers/Admin/ProvinceControlScoreController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="43" column="5" lean-forward="true" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/seeds/RoleSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Entities/CollegeDiplomas.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="21" column="7" lean-forward="true" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Entities/CollegeDetail.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Entities/CollegeCategory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="696">
+          <caret line="18" column="45" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Entities/MajorDetail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="54" column="26" lean-forward="true" selection-start-line="54" selection-start-column="26" selection-end-line="54" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Entities/Major.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="523">
+          <caret line="43" column="5" lean-forward="true" selection-start-line="35" selection-start-column="2" selection-end-line="43" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Entities/ProvinceControlScore.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="470">
+          <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/ProvinceControlScoreRepositoryEloquent.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="58" column="18" selection-start-line="58" selection-start-column="18" selection-end-line="58" selection-end-column="18" />
         </state>
       </provider>
     </entry>

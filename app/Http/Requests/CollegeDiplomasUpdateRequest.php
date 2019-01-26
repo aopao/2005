@@ -13,7 +13,7 @@ class CollegeDiplomasUpdateRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,21 @@ class CollegeDiplomasUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => [
+                'required',
+            ],
+        ];
+    }
+
+    /**
+     * 自定义错误类型
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            'name.required' => '院校层次不能为空',
         ];
     }
 }

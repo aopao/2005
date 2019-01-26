@@ -70,13 +70,13 @@ class CollegeCategoryController extends BaseController
     {
         try {
 
-            if ($a = $this->repository->findByField('mobile', $request->get('mobile', null))->first()) {
-                return $this->responseFormat->error(201, '手机号已经注册!');
+            if ($a = $this->repository->findByField('name', $request->get('name', null))->first()) {
+                return $this->responseFormat->error(201, '此院校类型已经添加啦!');
             }
 
-            $admin = $this->repository->create($request->all());
+            $response = $this->repository->create($request->all());
 
-            return $this->responseFormat->success($admin);
+            return $this->responseFormat->success($response);
         } catch (ModelNotFoundException $e) {
 
             return $this->responseFormat->error();
@@ -100,15 +100,14 @@ class CollegeCategoryController extends BaseController
      *  Update the specified resource in storage.
      *
      * @param \App\Http\Requests\CollegeCategoryUpdateRequest $request
-     * @param                                                 $mobile
+     * @param                                                 $id
      * @return array
      */
-    public function update(CollegeCategoryUpdateRequest $request, $mobile)
+    public function update(CollegeCategoryUpdateRequest $request, $id)
     {
-        $info = $this->repository->getIdByMobile($mobile);
+        $info = $this->repository->find($id);
         if (isset($info)) {
-            $data = $request->all();
-            //dd($data);
+            $data = $request->only('name', 'description');
             $this->repository->update($data, $info['id']);
 
             return $this->responseFormat->success($message = '修改成功!');
@@ -120,13 +119,13 @@ class CollegeCategoryController extends BaseController
     /**
      * Remove the specified resource from storage.
      *
-     * @param $mobile
+     * @param $id
      * @return array
      */
-    public function destroy($mobile)
+    public function destroy($id)
     {
 
-        $response = $this->repository->deleteWhere(['mobile' => $mobile]);
+        $response = $this->repository->deleteWhere(['id' => $id]);
 
         return $response ? $this->responseFormat->success([]) : $this->responseFormat->error();
     }
