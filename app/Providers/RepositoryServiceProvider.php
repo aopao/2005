@@ -30,5 +30,7 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(\App\Repositories\CollegeDiplomasRepository::class, \App\Repositories\CollegeDiplomasRepositoryEloquent::class);
         $this->app->bind(\App\Repositories\MajorRepository::class, \App\Repositories\MajorRepositoryEloquent::class);
         $this->app->bind(\App\Repositories\ProvinceControlScoreRepository::class, \App\Repositories\ProvinceControlScoreRepositoryEloquent::class);
+        $this->app->bind(\App\Repositories\SerialNumberRepository::class, \App\Repositories\SerialNumberRepositoryEloquent::class);
+        $this->app->bind(\App\Repositories\VipCardRepository::class, \App\Repositories\VipCardRepositoryEloquent::class);
     }
 }

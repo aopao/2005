@@ -4,27 +4,28 @@ namespace App\Api\Controllers\Admin;
 
 use Auth;
 use Illuminate\Http\Request;
-use App\Validators\MajorValidator;
-use App\Repositories\MajorRepository;
-use App\Transformers\MajorTransformers;
-use App\Http\Requests\MajorCreateRequest;
-use App\Http\Requests\MajorUpdateRequest;
+use App\Services\SerialNumberService;
+use App\Validators\SerialNumberValidator;
+use App\Repositories\SerialNumberRepository;
+use App\Transformers\SerialNumberTransformers;
+use App\Http\Requests\SerialNumberCreateRequest;
+use App\Http\Requests\SerialNumberUpdateRequest;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 /**
- * Class MajorController.
+ * Class SerialNumberController.
  *
  * @package namespace App\Http\Controllers;
  */
-class MajorController extends BaseController
+class SerialNumberController extends BaseController
 {
     /**
-     * @var MajorRepository
+     * @var SerialNumberRepository
      */
     protected $repository;
 
     /**
-     * @var MajorValidator
+     * @var SerialNumberValidator
      */
     protected $validator;
 
@@ -34,13 +35,13 @@ class MajorController extends BaseController
     private $request;
 
     /**
-     * MajorController constructor.
+     * SerialNumberController constructor.
      *
-     * @param MajorRepository          $repository
-     * @param MajorValidator           $validator
+     * @param SerialNumberRepository   $repository
+     * @param SerialNumberValidator    $validator
      * @param \Illuminate\Http\Request $request
      */
-    public function __construct(MajorRepository $repository, MajorValidator $validator, Request $request)
+    public function __construct(SerialNumberRepository $repository, SerialNumberValidator $validator, Request $request)
     {
         parent::__construct();
         $this->repository = $repository;
@@ -61,32 +62,29 @@ class MajorController extends BaseController
     }
 
     /**
-     * 获取层级 Option
-     */
-    public function levelOptionList()
-    {
-        $data = $this->repository->levelOptionList();
-
-        return isset($data) ? $this->responseFormat->success($data) : $this->responseFormat->error();
-    }
-
-    /**
      *  Store a newly created resource in storage.
      *
-     * @param \App\Http\Requests\MajorCreateRequest $request
+     * @param \App\Http\Requests\SerialNumberCreateRequest   $request
+     * @param \App\Api\Controllers\Admin\SerialNumberService $serialNumberService
      * @return array
      */
-    public function store(MajorCreateRequest $request)
+    public function store(SerialNumberCreateRequest $request, SerialNumberService $serialNumberService)
     {
         try {
+            ini_set('memory_limit', '500M');
+            set_time_limit(0);//设置超时限制为0分钟
+            $id = Auth::guard('admin')->user()->id;
+            $data = $serialNumberService->getSerialnunmbers(
+                $request->get('sum', 0),
+                $is_senior = $request->get('is_senior', 0),
+                $admin_id = $id,
+                $agent_id = 0,
+                $vip_id = $request->get('vip_id', 0),
+                $channel = $request->get('channel', 0));
 
-            if ($a = $this->repository->findByField('name', $request->get('name', null))->first()) {
-                return $this->responseFormat->error(201, '此院校类型已经添加啦!');
-            }
+            $this->repository->addAll($data);
 
-            $response = $this->repository->create($request->all());
-
-            return $this->responseFormat->success($response);
+            return $this->responseFormat->success();
         } catch (ModelNotFoundException $e) {
 
             return $this->responseFormat->error();
@@ -103,17 +101,17 @@ class MajorController extends BaseController
     {
         $admin = $this->repository->findByField('guid', $guid)->first();
 
-        return isset($admin) ? $this->response->item($admin, new MajorTransformers) : $this->responseFormat->error();
+        return isset($admin) ? $this->response->item($admin, new SerialNumberTransformers) : $this->responseFormat->error();
     }
 
     /**
      *  Update the specified resource in storage.
      *
-     * @param \App\Http\Requests\MajorUpdateRequest           $request
+     * @param \App\Http\Requests\SerialNumberUpdateRequest    $request
      * @param                                                 $id
      * @return array
      */
-    public function update(MajorUpdateRequest $request, $id)
+    public function update(SerialNumberUpdateRequest $request, $id)
     {
         $info = $this->repository->find($id);
         if (isset($info)) {

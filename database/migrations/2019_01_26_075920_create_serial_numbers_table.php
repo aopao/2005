@@ -4,9 +4,9 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
 /**
- * Class CreateProvincesTable.
+ * Class CreateSerialNumbersTable.
  */
-class CreateProvincesTable extends Migration
+class CreateSerialNumbersTable extends Migration
 {
 	/**
 	 * Run the migrations.
@@ -15,7 +15,7 @@ class CreateProvincesTable extends Migration
 	 */
 	public function up()
 	{
-		Schema::create('provinces', function(Blueprint $table) {
+		Schema::create('serial_numbers', function(Blueprint $table) {
             $table->increments('id');
 
             $table->timestamps();
@@ -29,6 +29,6 @@ class CreateProvincesTable extends Migration
 	 */
 	public function down()
 	{
-		Schema::drop('provinces');
+		Schema::drop('serial_numbers');
 	}
 }

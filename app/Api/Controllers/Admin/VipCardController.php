@@ -4,27 +4,27 @@ namespace App\Api\Controllers\Admin;
 
 use Auth;
 use Illuminate\Http\Request;
-use App\Validators\MajorValidator;
-use App\Repositories\MajorRepository;
-use App\Transformers\MajorTransformers;
-use App\Http\Requests\MajorCreateRequest;
-use App\Http\Requests\MajorUpdateRequest;
+use App\Validators\VipCardValidator;
+use App\Repositories\VipCardRepository;
+use App\Transformers\VipCardTransformers;
+use App\Http\Requests\VipCardCreateRequest;
+use App\Http\Requests\VipCardUpdateRequest;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 /**
- * Class MajorController.
+ * Class VipCardController.
  *
  * @package namespace App\Http\Controllers;
  */
-class MajorController extends BaseController
+class VipCardController extends BaseController
 {
     /**
-     * @var MajorRepository
+     * @var VipCardRepository
      */
     protected $repository;
 
     /**
-     * @var MajorValidator
+     * @var VipCardValidator
      */
     protected $validator;
 
@@ -34,13 +34,13 @@ class MajorController extends BaseController
     private $request;
 
     /**
-     * MajorController constructor.
+     * VipCardController constructor.
      *
-     * @param MajorRepository          $repository
-     * @param MajorValidator           $validator
+     * @param VipCardRepository        $repository
+     * @param VipCardValidator         $validator
      * @param \Illuminate\Http\Request $request
      */
-    public function __construct(MajorRepository $repository, MajorValidator $validator, Request $request)
+    public function __construct(VipCardRepository $repository, VipCardValidator $validator, Request $request)
     {
         parent::__construct();
         $this->repository = $repository;
@@ -61,27 +61,27 @@ class MajorController extends BaseController
     }
 
     /**
-     * 获取层级 Option
+     * 获取下拉列表中的值
+     *
+     * @return array
      */
-    public function levelOptionList()
+    public function optionList()
     {
-        $data = $this->repository->levelOptionList();
-
-        return isset($data) ? $this->responseFormat->success($data) : $this->responseFormat->error();
+        return $this->responseFormat->success($this->repository->all(['id', 'name']));
     }
 
     /**
      *  Store a newly created resource in storage.
      *
-     * @param \App\Http\Requests\MajorCreateRequest $request
+     * @param \App\Http\Requests\VipCardCreateRequest $request
      * @return array
      */
-    public function store(MajorCreateRequest $request)
+    public function store(VipCardCreateRequest $request)
     {
         try {
 
             if ($a = $this->repository->findByField('name', $request->get('name', null))->first()) {
-                return $this->responseFormat->error(201, '此院校类型已经添加啦!');
+                return $this->responseFormat->error(201, '此VIP服务卡已经添加啦!');
             }
 
             $response = $this->repository->create($request->all());
@@ -96,28 +96,28 @@ class MajorController extends BaseController
     /**
      * Display the specified resource.
      *
-     * @param $guid
+     * @param $id
      * @return array|\Dingo\Api\Http\Response
      */
-    public function show($guid)
+    public function show($id)
     {
-        $admin = $this->repository->findByField('guid', $guid)->first();
+        $data = $this->repository->find($id);
 
-        return isset($admin) ? $this->response->item($admin, new MajorTransformers) : $this->responseFormat->error();
+        return isset($data) ? $this->responseFormat->success($data) : $this->responseFormat->error();
     }
 
     /**
      *  Update the specified resource in storage.
      *
-     * @param \App\Http\Requests\MajorUpdateRequest           $request
+     * @param \App\Http\Requests\VipCardUpdateRequest         $request
      * @param                                                 $id
      * @return array
      */
-    public function update(MajorUpdateRequest $request, $id)
+    public function update(VipCardUpdateRequest $request, $id)
     {
         $info = $this->repository->find($id);
         if (isset($info)) {
-            $data = $request->only('name', 'description');
+            $data = $request->all();
             $this->repository->update($data, $info['id']);
 
             return $this->responseFormat->success($message = '修改成功!');

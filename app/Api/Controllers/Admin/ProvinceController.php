@@ -65,9 +65,8 @@ class ProvinceController extends BaseController
      *
      * @return array
      */
-    public function option_list()
+    public function optionList()
     {
-
         return $this->responseFormat->success($this->repository->all());
     }
 

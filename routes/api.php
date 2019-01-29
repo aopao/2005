@@ -36,14 +36,22 @@ $api->version('v1', function ($api) {
         $api->resource('college', 'CollegeController');
 
         /*大学信息管理管理路由*/
+        $api->get('major/levelOptionList', 'MajorController@levelOptionList');
         $api->resource('major', 'MajorController');
 
         /*省份省控线管理管理路由*/
         $api->resource('provinceControlScore', 'ProvinceControlScoreController');
 
         /*省份管理管理路由*/
-        $api->get('province/option_list', 'ProvinceController@option_list');
+        $api->get('province/optionList', 'ProvinceController@optionList');
         $api->resource('province', 'ProvinceController');
+
+        /*VIP服务卡管理路由*/
+        $api->get('vipCard/optionList', 'vipCardController@optionList');
+        $api->resource('vipCard', 'vipCardController');
+
+        /*序列号管理路由*/
+        $api->resource('serialNumber', 'SerialNumberController');
 
         /*管理管理路由*/
         $api->post('role/permission', ['uses' => 'RoleController@givePermission']);

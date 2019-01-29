@@ -2,6 +2,7 @@
 
 namespace App\Api\Controllers\Admin;
 
+use App\Entities\Admin;
 use Auth;
 use Illuminate\Http\Request;
 use App\Validators\AdminValidator;
@@ -91,9 +92,13 @@ class AdminController extends BaseController
      */
     public function show($guid)
     {
-        $admin = $this->repository->findByField('guid', $guid)->first();
+        //$admin = $this->repository->findByField('guid', $guid)->first();
 
-        return isset($admin) ? $this->response->item($admin, new AdminTransformers) : $this->responseFormat->error();
+        //return isset($admin) ? $this->response->item($admin, new AdminTransformers) : $this->responseFormat->error();
+
+        $admin = Admin::where("mobile", 'like', '%'.$guid.'%')->get()->toArray();
+        return $this->responseFormat->success($admin);
+        //return isset($admin) ? $this->response->item($admin, new AdminTransformers) : $this->responseFormat->error();
     }
 
     /**
