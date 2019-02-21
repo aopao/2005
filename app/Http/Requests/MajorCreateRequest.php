@@ -13,7 +13,7 @@ class MajorCreateRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**

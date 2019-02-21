@@ -44,6 +44,10 @@ return [
             'driver' => 'jwt',
             'provider' => 'admins',
         ],
+        'agent' => [
+            'driver' => 'jwt',
+            'provider' => 'agents',
+        ],
         'api' => [
             'driver' => 'token',
             'provider' => 'users',
@@ -75,6 +79,10 @@ return [
         'admins' => [
             'driver' => 'eloquent',
             'model' => App\Entities\Admin::class,
+        ],
+        'agents' => [
+            'driver' => 'eloquent',
+            'model' => App\Entities\Agent::class,
         ],
     ],
 

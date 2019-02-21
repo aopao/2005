@@ -30,13 +30,13 @@ class AdminMiddleWare
                 if ($res) {
                     return $next($request);
                 } else {
-                    abort(404);
+                    return response()->json(['status' => 403, 'message' => '您的权限不足,无法进行操作,请联系管理员!']);
                 }
             } else {
-                return response()->json(['status_code' => '未登录']);
+                return response()->json(['status' => '201', 'message' => '未登录!']);
             }
         } catch (PermissionDoesNotExist $exception) {
-            return response()->json(['message' => '您的权限不足,无法进行操作,请联系管理员!', 'status_code' => 403]);
+            return response()->json(['status' => 403, 'message' => '您的权限不足,无法进行操作,请联系管理员!']);
         }
     }
 }

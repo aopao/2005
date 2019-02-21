@@ -70,7 +70,7 @@ class CollegeCategoryController extends BaseController
     {
         try {
 
-            if ($a = $this->repository->findByField('name', $request->get('name', null))->first()) {
+            if ($this->repository->findByField('name', $request->get('name', null))->first()) {
                 return $this->responseFormat->error(201, '此院校类型已经添加啦!');
             }
 
@@ -91,9 +91,9 @@ class CollegeCategoryController extends BaseController
      */
     public function show($guid)
     {
-        $admin = $this->repository->findByField('guid', $guid)->first();
+        $response = $this->repository->findByField('guid', $guid)->first();
 
-        return isset($admin) ? $this->response->item($admin, new CollegeCategoryTransformers) : $this->responseFormat->error();
+        return isset($response) ? $this->response->item($response, new CollegeCategoryTransformers) : $this->responseFormat->error();
     }
 
     /**
@@ -110,7 +110,7 @@ class CollegeCategoryController extends BaseController
             $data = $request->only('name', 'description');
             $this->repository->update($data, $info['id']);
 
-            return $this->responseFormat->success($message = '修改成功!');
+            return $this->responseFormat->success($type = 'edit');
         } else {
             return $this->responseFormat->error($message = "修改失败!");
         }
@@ -128,32 +128,5 @@ class CollegeCategoryController extends BaseController
         $response = $this->repository->deleteWhere(['id' => $id]);
 
         return $response ? $this->responseFormat->success([]) : $this->responseFormat->error();
-    }
-
-    public function profile()
-    {
-        if (Auth::guard('admin')->check()) {
-            $admin = Auth::guard('admin')->user();
-            $admin->getRoleNames();
-            $admin->getAllPermissions();
-            $data = $admin->toArray();
-            if (isset($data['roles']) && isset($data['roles'][0])) {
-                $data['role']['name'] = $data['roles'][0]['display_name'];
-                $data['role']['describe'] = $data['roles'][0]['description'];
-                $permissions = $data['roles'][0]['permissions'];
-                foreach ($permissions as $key => $value) {
-                    $item = [];
-                    $item['name'] = $value['name'];
-                    $item['display_name'] = $value['display_name'];
-                    $data['role']['permissions'][] = $item;
-                }
-            }
-            unset($data['roles']);
-            $data['avatar'] = './avatar.jpeg';
-
-            return $this->responseFormat->success($data);
-        } else {
-            $this->responseFormat->error(201, '您还未登录!');
-        }
     }
 }

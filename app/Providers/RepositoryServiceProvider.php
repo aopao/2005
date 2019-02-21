@@ -32,5 +32,8 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(\App\Repositories\ProvinceControlScoreRepository::class, \App\Repositories\ProvinceControlScoreRepositoryEloquent::class);
         $this->app->bind(\App\Repositories\SerialNumberRepository::class, \App\Repositories\SerialNumberRepositoryEloquent::class);
         $this->app->bind(\App\Repositories\VipCardRepository::class, \App\Repositories\VipCardRepositoryEloquent::class);
+        $this->app->bind(\App\Repositories\AgentRepository::class, \App\Repositories\AgentRepositoryEloquent::class);
+        $this->app->bind(\App\Repositories\ArticleCategoryRepository::class, \App\Repositories\ArticleCategoryRepositoryEloquent::class);
+        $this->app->bind(\App\Repositories\ArticleRepository::class, \App\Repositories\ArticleRepositoryEloquent::class);
     }
 }

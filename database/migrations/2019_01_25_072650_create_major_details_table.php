@@ -18,14 +18,14 @@ class CreateMajorDetailsTable extends Migration
         Schema::create('major_details', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('major_id')->comment('专业 ID');
-            $table->integer('clicks')->default(0)->comment('总点击');
+            $table->integer('clicks')->nullable()->default(0)->comment('总点击');
             $table->string('job_direction')->nullable()->comment('就业方向');
-            $table->string('graduation_student_num')->default(0)->comment('毕业学生数');
-            $table->string('work_rate')->default('0')->comment('就业率');
-            $table->string('wen_ratio')->default('0')->comment('文科比例');
-            $table->string('li_ratio')->default('0')->comment('理科比例');
-            $table->string('male_ratio')->default('0')->comment('男生比例');
-            $table->string('female_ratio')->default('0')->comment('女生比例');
+            $table->string('graduation_student_num')->nullable()->default(0)->comment('毕业学生数');
+            $table->string('work_rate')->nullable()->default('0')->comment('就业率');
+            $table->string('wen_ratio')->nullable()->default('0')->comment('文科比例');
+            $table->string('li_ratio')->nullable()->default('0')->comment('理科比例');
+            $table->string('male_ratio')->nullable()->default('0')->comment('男生比例');
+            $table->string('female_ratio')->nullable()->default('0')->comment('女生比例');
             $table->text('description')->nullable()->comment('简介');
             $table->text('goal')->nullable()->comment('目标');
             $table->text('require')->nullable()->comment('要求');

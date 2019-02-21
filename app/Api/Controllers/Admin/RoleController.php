@@ -2,13 +2,12 @@
 
 namespace App\Api\Controllers\Admin;
 
-use App\Repositories\AdminRepository;
-use App\Validators\RoleValidator;
-use App\Http\Requests\RoleCreateRequest;
-use App\Http\Requests\RoleUpdateRequest;
 use Illuminate\Http\Request;
+use App\Validators\RoleValidator;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
+use App\Http\Requests\RoleCreateRequest;
+use App\Http\Requests\RoleUpdateRequest;
 
 /**
  * Class RolesController.
@@ -43,15 +42,56 @@ class RoleController extends BaseController
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @param \Illuminate\Http\Request $request
+     * @return array
      */
-    public function index()
+    public function index(Request $request)
     {
-        $roles = $this->model->all();
+        /*判断页数*/
+        $pageSize = $request->get('pageSize', 10) != null ? $request->get('pageSize', 10) : 10;
+        if (($pageSize % 10 != 0) || $pageSize > 50) {
+            return response()->json(['status_code' => '404']);
+        }
+        /*获取查询参数*/
+        $display_name = $request->get('display_name', null);
+        $guard_name = $request->get('guard_name', null);
 
-        return response()->json([
-            'data' => $roles,
-        ]);
+        /*组装查询参数*/
+        $sql = $this->model->where('guard_name', $guard_name);
+        if ($display_name != null) {
+            $sql = $sql->where('display_name', 'like', '%'.$display_name.'%');
+        }
+        /*构造页数参数*/
+        $pageNo = $request->get('pageNo', 10) != null ? $request->get('pageNo', 0) : 0;
+        $offset = ($pageNo - 1) * $pageSize;
+        $totalCount = $sql->count();
+        $totalPage = ceil($totalCount / $pageSize);
+
+        /*数据库查询*/
+        $data = $sql->skip($offset)->take($pageSize)->get();
+
+        return $data ? $this->pageSerializer->collection($data, $pageSize, $pageNo, $totalPage, $totalCount) : $this->responseFormat->error();
+    }
+
+    /**
+     * 层级分类
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return array
+     */
+    public function optionList(Request $request)
+    {
+        $guard_name = $request->only('guard_name');
+        $data = $this->model->where('guard_name', $guard_name)->get();
+        $data = $data->map(function ($item) {
+            $node = [];
+            $node['id'] = $item['name'];
+            $node['name'] = $item['display_name'];
+
+            return $node;
+        });
+
+        return $this->responseFormat->success($data);
     }
 
     /**
@@ -62,7 +102,7 @@ class RoleController extends BaseController
      */
     public function store(RoleCreateRequest $request)
     {
-        $response = $this->model->create($request->all());
+        $response = $this->model->create($request->only(['name', 'display_name', 'guard_name']));
 
         return $response ? $this->responseFormat->success() : $this->responseFormat->error();
     }
@@ -75,9 +115,9 @@ class RoleController extends BaseController
      */
     public function show($id)
     {
-        $response = $this->model->find($id);
+        $response = $this->model->select('id', 'display_name', 'name')->find($id);
 
-        return $response ? $this->responseFormat->success() : $this->responseFormat->error();
+        return $response ? $this->responseFormat->success($response) : $this->responseFormat->error();
     }
 
     /**
@@ -97,11 +137,10 @@ class RoleController extends BaseController
     /**
      * 给角色组分配权限
      *
-     * @param \Illuminate\Http\Request             $request
-     * @param \Spatie\Permission\Models\Permission $permission
+     * @param \Illuminate\Http\Request $request
      * @return array
      */
-    public function givePermission(Request $request, Permission $permission)
+    public function givePermission(Request $request)
     {
         try {
             $id = $request->get('id', null);
@@ -111,8 +150,7 @@ class RoleController extends BaseController
                 return $this->responseFormat->error();
             }
 
-            $permissionList = $request->get('permissions_id', null);
-            $permissions = $permission->whereIn('name', $permissionList)->get();
+            $permissions = $request->get('permission', null);
             $response = $role->syncPermissions($permissions);
 
             return $response ? $this->responseFormat->success([]) : $this->responseFormat->error();

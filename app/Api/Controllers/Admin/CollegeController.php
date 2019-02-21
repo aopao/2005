@@ -55,9 +55,9 @@ class CollegeController extends BaseController
      */
     public function index()
     {
-        $data = $this->repository->getAllByPage($this->request);
+        $response = $this->repository->getAllByPage($this->request);
 
-        return $this->pageSerializer->collection($data['data'], $data['pageSize'], $pageNo = $data['pageNo'], $totalPage = $data['totalPage'], $totalCount = $data['totalCount']);
+        return $this->pageSerializer->collection($response['data'], $response['pageSize'], $pageNo = $response['pageNo'], $totalPage = $response['totalPage'], $totalCount = $response['totalCount']);
     }
 
     /**
@@ -70,13 +70,13 @@ class CollegeController extends BaseController
     {
         try {
 
-            if ($a = $this->repository->findByField('mobile', $request->get('mobile', null))->first()) {
+            if ($this->repository->findByField('mobile', $request->get('mobile', null))->first()) {
                 return $this->responseFormat->error(201, '手机号已经注册!');
             }
 
-            $admin = $this->repository->create($request->all());
+            $response = $this->repository->create($request->all());
 
-            return $this->responseFormat->success($admin);
+            return $this->responseFormat->success($response);
         } catch (ModelNotFoundException $e) {
 
             return $this->responseFormat->error();
@@ -91,9 +91,9 @@ class CollegeController extends BaseController
      */
     public function show($guid)
     {
-        $admin = $this->repository->findByField('guid', $guid)->first();
+        $response = $this->repository->findByField('guid', $guid)->first();
 
-        return isset($admin) ? $this->response->item($admin, new CollegeTransformers) : $this->responseFormat->error();
+        return isset($response) ? $this->response->item($response, new CollegeTransformers) : $this->responseFormat->error();
     }
 
     /**
@@ -128,32 +128,5 @@ class CollegeController extends BaseController
         $response = $this->repository->deleteWhere(['mobile' => $mobile]);
 
         return $response ? $this->responseFormat->success([]) : $this->responseFormat->error();
-    }
-
-    public function profile()
-    {
-        if (Auth::guard('admin')->check()) {
-            $admin = Auth::guard('admin')->user();
-            $admin->getRoleNames();
-            $admin->getAllPermissions();
-            $data = $admin->toArray();
-            if (isset($data['roles']) && isset($data['roles'][0])) {
-                $data['role']['name'] = $data['roles'][0]['display_name'];
-                $data['role']['describe'] = $data['roles'][0]['description'];
-                $permissions = $data['roles'][0]['permissions'];
-                foreach ($permissions as $key => $value) {
-                    $item = [];
-                    $item['name'] = $value['name'];
-                    $item['display_name'] = $value['display_name'];
-                    $data['role']['permissions'][] = $item;
-                }
-            }
-            unset($data['roles']);
-            $data['avatar'] = './avatar.jpeg';
-
-            return $this->responseFormat->success($data);
-        } else {
-            $this->responseFormat->error(201, '您还未登录!');
-        }
     }
 }

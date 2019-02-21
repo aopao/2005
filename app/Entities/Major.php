@@ -26,7 +26,6 @@ class Major extends Model implements Transformable
         'parent_id',
         'top_parent_id',
         'diplomas',
-        'level',
         'ranking',
         'ranking_type',
         'created_at',

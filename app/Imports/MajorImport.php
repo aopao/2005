@@ -51,9 +51,6 @@ class MajorImport implements ToModel
                     'employment_city' => $row[28] == "-" ? "" : $row[28],
                     'money' => '',
                 ];
-                echo "<pre>";
-                print_r($data);
-                echo "</pre>";
                 MajorDetail::create($data);
             }
         }

@@ -52,7 +52,7 @@ class CreateVipCardsTable extends Migration
             $table->integer('dxpm')->default(-1)->comment('大学排名');
             $table->integer('zycx')->default(-1)->comment('专业查询');
             $table->boolean('status')->default(1)->comment('状态');
-            $table->string('description')->nullable();
+            $table->text('description')->nullable();
             $table->timestamps();
         });
     }

@@ -39,6 +39,9 @@ class AuthController extends BaseController
             return response()->json(['error' => '用户名或者密码错误!', 'status_code' => 401], 401);
         } else {
             $admin = Auth::guard('admin')->user()->toArray();
+            if ($admin['ban'] > 5) {
+                return response()->json(['error' => '账户已经被禁止登陆!', 'status_code' => 201], 201);
+            }
 
             return $this->respondWithToken($admin, $token);
         }

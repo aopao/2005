@@ -55,9 +55,9 @@ class MajorController extends BaseController
      */
     public function index()
     {
-        $data = $this->repository->getAllByPage($this->request);
+        $response = $this->repository->getAllByPage($this->request);
 
-        return $this->pageSerializer->collection($data['data'], $data['pageSize'], $pageNo = $data['pageNo'], $totalPage = $data['totalPage'], $totalCount = $data['totalCount']);
+        return $this->pageSerializer->collection($response['data'], $response['pageSize'], $pageNo = $response['pageNo'], $totalPage = $response['totalPage'], $totalCount = $response['totalCount']);
     }
 
     /**
@@ -65,9 +65,9 @@ class MajorController extends BaseController
      */
     public function levelOptionList()
     {
-        $data = $this->repository->levelOptionList();
+        $response = $this->repository->levelOptionList();
 
-        return isset($data) ? $this->responseFormat->success($data) : $this->responseFormat->error();
+        return isset($response) ? $this->responseFormat->success($response) : $this->responseFormat->error();
     }
 
     /**
@@ -78,19 +78,9 @@ class MajorController extends BaseController
      */
     public function store(MajorCreateRequest $request)
     {
-        try {
+        $response = $this->repository->createMajor($request->all());
 
-            if ($a = $this->repository->findByField('name', $request->get('name', null))->first()) {
-                return $this->responseFormat->error(201, '此院校类型已经添加啦!');
-            }
-
-            $response = $this->repository->create($request->all());
-
-            return $this->responseFormat->success($response);
-        } catch (ModelNotFoundException $e) {
-
-            return $this->responseFormat->error();
-        }
+        return isset($response) ? $this->responseFormat->success() : $this->responseFormat->error();
     }
 
     /**
@@ -101,9 +91,9 @@ class MajorController extends BaseController
      */
     public function show($guid)
     {
-        $admin = $this->repository->findByField('guid', $guid)->first();
+        $response = $this->repository->findByField('guid', $guid)->first();
 
-        return isset($admin) ? $this->response->item($admin, new MajorTransformers) : $this->responseFormat->error();
+        return isset($response) ? $this->response->item($response, new MajorTransformers) : $this->responseFormat->error();
     }
 
     /**
@@ -134,36 +124,8 @@ class MajorController extends BaseController
      */
     public function destroy($id)
     {
-
         $response = $this->repository->deleteWhere(['id' => $id]);
 
         return $response ? $this->responseFormat->success([]) : $this->responseFormat->error();
-    }
-
-    public function profile()
-    {
-        if (Auth::guard('admin')->check()) {
-            $admin = Auth::guard('admin')->user();
-            $admin->getRoleNames();
-            $admin->getAllPermissions();
-            $data = $admin->toArray();
-            if (isset($data['roles']) && isset($data['roles'][0])) {
-                $data['role']['name'] = $data['roles'][0]['display_name'];
-                $data['role']['describe'] = $data['roles'][0]['description'];
-                $permissions = $data['roles'][0]['permissions'];
-                foreach ($permissions as $key => $value) {
-                    $item = [];
-                    $item['name'] = $value['name'];
-                    $item['display_name'] = $value['display_name'];
-                    $data['role']['permissions'][] = $item;
-                }
-            }
-            unset($data['roles']);
-            $data['avatar'] = './avatar.jpeg';
-
-            return $this->responseFormat->success($data);
-        } else {
-            $this->responseFormat->error(201, '您还未登录!');
-        }
     }
 }

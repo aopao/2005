@@ -62,7 +62,7 @@ class SerialNumberRepositoryEloquent extends BaseRepository implements SerialNum
         $vip_id = $request->get('vip_id', null);
 
         /*组装查询参数*/
-        $sql = $this->model->orderBy('created_at', 'desc');
+        $sql = $this->model->orderBy('id', 'desc');
         if ($number != null) {
             $sql = $sql->where('number', 'like', '%'.$number.'%');
         }

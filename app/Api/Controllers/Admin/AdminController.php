@@ -7,7 +7,6 @@ use Auth;
 use Illuminate\Http\Request;
 use App\Validators\AdminValidator;
 use App\Repositories\AdminRepository;
-use App\Transformers\AdminTransformers;
 use App\Http\Requests\AdminCreateRequest;
 use App\Http\Requests\AdminUpdateRequest;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
@@ -77,6 +76,10 @@ class AdminController extends BaseController
 
             $admin = $this->repository->create($request->all());
 
+            if ($role = $request->get('role', false)) {
+                $admin->assignRole($role);
+            }
+
             return $this->responseFormat->success($admin);
         } catch (ModelNotFoundException $e) {
 
@@ -97,6 +100,7 @@ class AdminController extends BaseController
         //return isset($admin) ? $this->response->item($admin, new AdminTransformers) : $this->responseFormat->error();
 
         $admin = Admin::where("mobile", 'like', '%'.$guid.'%')->get()->toArray();
+
         return $this->responseFormat->success($admin);
         //return isset($admin) ? $this->response->item($admin, new AdminTransformers) : $this->responseFormat->error();
     }
@@ -110,11 +114,13 @@ class AdminController extends BaseController
      */
     public function update(AdminUpdateRequest $request, $mobile)
     {
-        $info = $this->repository->getIdByMobile($mobile);
-        if (isset($info)) {
+        $admin = $this->repository->getIdByMobile($mobile);
+        if (isset($admin)) {
             $data = $request->all();
-            //dd($data);
-            $this->repository->update($data, $info['id']);
+            $this->repository->update($data, $admin['id']);
+            if ($role = $request->get('role', false)) {
+                $admin->syncRoles($role);
+            }
 
             return $this->responseFormat->success($message = '修改成功!');
         } else {
