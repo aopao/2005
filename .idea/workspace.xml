@@ -2,58 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f48bc14c-913b-43a8-b379-855283904b3d" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Api/Controllers/Admin/AgentController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Api/Controllers/Admin/ArticleCategoryController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Api/Controllers/Admin/ArticleController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Api/Controllers/Admin/UploadController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Api/Controllers/Agent/AgentController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Api/Controllers/Agent/AuthController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Api/Controllers/Agent/BaseController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Entities/RoleHasPermission.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/AccessControlAllowOrigin.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Api/Controllers/Admin/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Api/Controllers/Admin/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Api/Controllers/Admin/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Api/Controllers/Admin/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Api/Controllers/Admin/CollegeCategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Api/Controllers/Admin/CollegeCategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Api/Controllers/Admin/CollegeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Api/Controllers/Admin/CollegeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Api/Controllers/Admin/CollegeDiplomasController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Api/Controllers/Admin/CollegeDiplomasController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Api/Controllers/Admin/MajorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Api/Controllers/Admin/MajorController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Api/Controllers/Admin/PermissionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Api/Controllers/Admin/PermissionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Api/Controllers/Admin/ProvinceControlScoreController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Api/Controllers/Admin/ProvinceControlScoreController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Api/Controllers/Admin/ProvinceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Api/Controllers/Admin/ProvinceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Api/Controllers/Admin/RoleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Api/Controllers/Admin/RoleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Api/Controllers/Admin/SerialNumberController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Api/Controllers/Admin/SerialNumberController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Api/Controllers/Admin/VipCardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Api/Controllers/Admin/VipCardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Api/Serializers/ResponseFormat.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Api/Serializers/ResponseFormat.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Entities/Agent.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Entities/Agent.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Entities/Major.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Entities/Major.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Exceptions/Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exceptions/Handler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/AdminMiddleWare.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/AdminMiddleWare.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/MajorCreateRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/MajorCreateRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/MajorUpdateRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/MajorUpdateRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ProvinceControlScoreCreateRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ProvinceControlScoreCreateRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ProvinceControlScoreUpdateRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ProvinceControlScoreUpdateRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Imports/MajorImport.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Imports/MajorImport.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/RepositoryServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RepositoryServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/AgentRepositoryEloquent.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/AgentRepositoryEloquent.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/MajorRepositoryEloquent.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/MajorRepositoryEloquent.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/SerialNumberRepositoryEloquent.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/SerialNumberRepositoryEloquent.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Transformers/AgentTransformer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Transformers/AgentTransformer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/province_control_scores.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/province_control_scores.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_01_25_072650_create_major_details_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_01_25_072650_create_major_details_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_01_26_070432_create_vip_cards_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_01_26_070432_create_vip_cards_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_01_26_073421_create_agents_table.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/RoleSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/RoleTableSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/laravel_access.log" beforeDir="false" afterPath="$PROJECT_DIR$/laravel_access.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel_error.log" beforeDir="false" afterPath="$PROJECT_DIR$/laravel_error.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -68,6 +20,19 @@
   </component>
   <component name="FavoritesManager">
     <favorites_list name="2019" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="2019_02_22_082420_create_major_choice_subjects_table.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2019_02_22_082420_create_major_choice_subjects_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="334">
+              <caret line="30" column="28" lean-forward="true" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -138,19 +103,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/database/seeds/CollegeCategorySeeder.php" />
-        <option value="$PROJECT_DIR$/database/seeds/CollegeDetailSeeder.php" />
-        <option value="$PROJECT_DIR$/database/seeds/CollegeDiplomasSeeder.php" />
-        <option value="$PROJECT_DIR$/database/seeds/CollegeSeeder.php" />
-        <option value="$PROJECT_DIR$/database/seeds/MajorDetailSeeder.php" />
-        <option value="$PROJECT_DIR$/database/seeds/MajorSeeder.php" />
         <option value="$PROJECT_DIR$/database/seeds/ProvinceControlScoreSeeder.php" />
         <option value="$PROJECT_DIR$/database/seeds/RoleSeeder.php" />
         <option value="$PROJECT_DIR$/app/Repositories/AgentProvinceRepositoryEloquent.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_01_30_080957_create_agents_table.php" />
         <option value="$PROJECT_DIR$/app/Entities/Agent.php" />
         <option value="$PROJECT_DIR$/app/Entities/RoleHasPermission.php" />
-        <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
         <option value="$PROJECT_DIR$/database/seeds/RoleTableSeeder.php" />
         <option value="$PROJECT_DIR$/app/Imports/MajorImport.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/MajorsController.php" />
@@ -189,6 +147,13 @@
         <option value="$PROJECT_DIR$/app/Api/Controllers/Admin/AuthController.php" />
         <option value="$PROJECT_DIR$/routes/api.php" />
         <option value="$PROJECT_DIR$/app/Api/Controllers/Admin/SerialNumberController.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_02_21_104622_create_college_has_attributes_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_02_21_104615_create_college_attributes_table.php" />
+        <option value="$PROJECT_DIR$/database/seeds/CollegeAttributesSeeder.php" />
+        <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/app/Entities/CollegeHasAttribute.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_02_22_082420_create_major_choice_subjects_table.php" />
       </list>
     </option>
   </component>
@@ -342,6 +307,28 @@
               <item name="2019" type="b2602c69:ProjectViewProjectNode" />
               <item name="2019" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
+            <path>
+              <item name="2019" type="b2602c69:ProjectViewProjectNode" />
+              <item name="2019" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="database" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="2019" type="b2602c69:ProjectViewProjectNode" />
+              <item name="2019" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="database" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="migrations" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="2019" type="b2602c69:ProjectViewProjectNode" />
+              <item name="2019" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="database" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="seeds" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="2019" type="b2602c69:ProjectViewProjectNode" />
+              <item name="2019" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="routes" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -404,17 +391,18 @@
       <workItem from="1549932224045" duration="14576000" />
       <workItem from="1550304000873" duration="2367000" />
       <workItem from="1550474931249" duration="4900000" />
-      <workItem from="1550543211241" duration="7749000" />
+      <workItem from="1550543211241" duration="12863000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="189446000" />
+    <option name="totallyTimeSpent" value="194560000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49805447" visible="true" weight="0.30595237" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49805447" weight="0.30595237" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -447,76 +435,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/ThrottleRequests.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-548">
-          <caret line="10" column="7" lean-forward="true" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/api.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="236" column="43" selection-start-line="236" selection-start-column="43" selection-end-line="236" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Providers/DingoServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="10" column="11" lean-forward="true" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Providers/RouteServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="68" column="32" lean-forward="true" selection-start-line="68" selection-start-column="32" selection-end-line="68" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10150">
-          <caret line="175" column="32" lean-forward="true" selection-start-line="175" selection-start-column="32" selection-end-line="175" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Exceptions/Handler.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="48" column="34" selection-start-line="48" selection-start-column="34" selection-end-line="48" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/http-kernel/Exception/HttpException.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="623">
-          <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/Core/Core_c.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="282" column="25" selection-start-line="282" selection-start-column="25" selection-end-line="282" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/dingo/api/src/Exception/RateLimitExceededException.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="631">
-          <caret line="25" column="41" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Api/Controllers/Admin/PermissionController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="791">
-          <caret line="87" column="21" lean-forward="true" selection-start-line="77" selection-start-column="8" selection-end-line="87" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Middleware/AdminMiddleWare.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="538">
@@ -528,13 +446,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="549">
           <caret line="49" column="29" selection-start-line="49" selection-start-column="29" selection-end-line="49" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_21_013044_create_college_categories_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="587">
-          <caret line="20" column="54" lean-forward="true" selection-start-line="19" selection-start-column="11" selection-end-line="20" selection-end-column="54" />
         </state>
       </provider>
     </entry>
@@ -779,6 +690,80 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="348">
           <caret line="6" column="31" lean-forward="true" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_21_013044_create_college_categories_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="19" column="11" selection-start-line="19" selection-start-column="11" selection-end-line="20" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/seeds/CollegeCategoryTableSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-450" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/seeds/CollegeAttributesSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="29" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="583">
+          <caret line="17" column="47" lean-forward="true" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_02_21_104615_create_college_attributes_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="611">
+          <caret line="20" column="54" selection-start-line="20" selection-start-column="54" selection-end-line="20" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_02_21_104622_create_college_has_attributes_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="553">
+          <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/console.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Entities/CollegeHasAttribute.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="643">
+          <caret line="30" column="19" lean-forward="true" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
+          <folding>
+            <element signature="e#7#389#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_16_080843_create_permission_tables.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="485">
+          <caret line="61" column="42" lean-forward="true" selection-start-line="61" selection-start-column="42" selection-end-line="61" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_02_22_082420_create_major_choice_subjects_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="30" column="28" lean-forward="true" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
         </state>
       </provider>
     </entry>
